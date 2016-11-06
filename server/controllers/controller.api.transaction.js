@@ -19,7 +19,10 @@ module.exports = {
     },
 
     getTransaction: function (req, res) {
-
+        Transaction.find(function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     },
 
     getTransactionById: function (req, res) {

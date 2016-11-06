@@ -11,5 +11,6 @@ router.delete('/user/delete/:id', userController.deleteUser)
 router.put('/user/update/:id', userController.updateUser)
 
 router.post('/transaction/create', transactionController.addTransaction)
+router.get('/transaction' ,transactionController.getTransaction)
 
 module.exports = router;
