@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const Transaction = new Schema({
-    transactionItem: [
+    transactionItems: [
         {
             name: {
                 type: String,
