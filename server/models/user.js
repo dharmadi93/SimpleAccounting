@@ -30,3 +30,6 @@ const User = new Schema({
     },
     transaction: []
 })
+
+
+module.exports = mongoose.model('User', User)
