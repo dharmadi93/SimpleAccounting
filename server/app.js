@@ -12,6 +12,7 @@ var mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE)
 
 var routes = require('./routes/index');
+var roles = require('./routes/routes.roles')
 var users = require('./routes/users');
 
 var app = express();
@@ -29,6 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', routes);
+app.use('/api/role', roles)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
