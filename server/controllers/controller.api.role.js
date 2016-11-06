@@ -31,7 +31,12 @@ module.exports = {
     },
 
     deleteRole: function (req, res) {
-
+        Role.findOneAndRemove({
+            _id: req.params.id
+        }, function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     },
 
     updateRole: function (req, res) {
