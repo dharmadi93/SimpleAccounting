@@ -30,7 +30,12 @@ module.exports = {
         })
     },
     deleteUser: function (req, res) {
-
+        User.findOneAndRemove({
+            _id: req.params.id
+        }, function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     },
     updateUser: function (req, res) {
 

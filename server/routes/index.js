@@ -6,5 +6,6 @@ var userController = require('../controllers/controller.api.users')
 router.post('/user/create', userController.addUser)
 router.get('/user', userController.getUsers)
 router.get('/user/:id', userController.getUsersById)
+router.delete('/user/delete/:id', userController.deleteUser)
 
 module.exports = router;
