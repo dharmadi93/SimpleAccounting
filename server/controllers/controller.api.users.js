@@ -46,7 +46,8 @@ module.exports = {
             name: req.body.name,
             password: req.body.password,
             email: req.body.email,
-            role: req.body.role
+            role: req.body.role,
+            updatedAt: Date.now()
         }, {
             new: true,
             upsert: true
