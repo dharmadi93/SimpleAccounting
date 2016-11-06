@@ -4,5 +4,6 @@ var userController = require('../controllers/controller.api.users')
 
 /* GET home page. */
 router.post('/user/create', userController.addUser)
+router.get('/user', userController.getUsers)
 
 module.exports = router;

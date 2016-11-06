@@ -16,7 +16,10 @@ module.exports = {
         })
     },
     getUsers: function (req, res) {
-
+        User.find(function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     },
     getUsersById: function (req, res) {
 
