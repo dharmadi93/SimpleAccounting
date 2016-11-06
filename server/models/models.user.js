@@ -28,7 +28,12 @@ const User = new Schema({
         type: String,
         required: true
     },
-    transaction: []
+    transaction: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Transaction'
+        }
+    ]
 })
 
 
