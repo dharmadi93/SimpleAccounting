@@ -7,7 +7,9 @@ module.exports = {
             username: req.body.username,
             password: req.body.password,
             email: req.body.email,
-            role: req.body.role
+            role: req.body.role,
+            createdAt: Date.now(),
+            updatedAt: Date.now()
         }
 
         User.create(user, function (err, data) {
