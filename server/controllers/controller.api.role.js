@@ -40,6 +40,16 @@ module.exports = {
     },
 
     updateRole: function (req, res) {
-
+        Role.findOneAndUpdate({
+            _id: req.params.id
+        }, {
+            role: req.body.role
+        }, {
+            new: true,
+            upsert: true
+        }, function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     }
 }

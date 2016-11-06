@@ -6,5 +6,6 @@ router.post('/create', roleController.addRole)
 router.get('/', roleController.getRole)
 router.get('/:id', roleController.getRoleById)
 router.delete('/delete/:id', roleController.deleteRole)
+router.put('/update/:id', roleController.updateRole)
 
 module.exports = router;
