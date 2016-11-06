@@ -38,6 +38,19 @@ module.exports = {
         })
     },
     updateUser: function (req, res) {
-
+        User.findOneAndUpdate({
+            _id: req.params.id
+        }, {
+            name: req.body.name,
+            password: req.body.password,
+            email: req.body.email,
+            role: req.body.role
+        }, {
+            new: true,
+            upsert: true
+        }, function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     }
 }
