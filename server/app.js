@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,7 +9,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors')
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/simple_accounting')
+mongoose.connect(process.env.DATABASE)
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
