@@ -28,6 +28,8 @@ const User = new Schema({
         type: String,
         required: true
     },
+    createdAt: Date,
+    updatedAt: Date,
     transaction: [
         {
             type: Schema.Types.ObjectId,
