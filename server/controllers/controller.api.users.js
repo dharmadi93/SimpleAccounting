@@ -22,7 +22,12 @@ module.exports = {
         })
     },
     getUsersById: function (req, res) {
-
+        User.findOne({
+            _id: req.params.id
+        }, function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     },
     deleteUser: function (req, res) {
 
