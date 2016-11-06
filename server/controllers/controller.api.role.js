@@ -43,7 +43,8 @@ module.exports = {
         Role.findOneAndUpdate({
             _id: req.params.id
         }, {
-            role: req.body.role
+            role: req.body.role,
+            updatedAt: Date.now()
         }, {
             new: true,
             upsert: true
