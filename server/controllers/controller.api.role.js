@@ -15,7 +15,10 @@ module.exports = {
     },
 
     getRole: function (req, res) {
-
+        Role.find(function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     },
 
     getRoleById: function (req, res) {
