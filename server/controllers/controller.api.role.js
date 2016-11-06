@@ -22,7 +22,12 @@ module.exports = {
     },
 
     getRoleById: function (req, res) {
-
+        Role.findOne({
+            _id: req.params.id
+        }, function (err, data) {
+            if (err) res.json(err)
+            else res.json(data)
+        })
     },
 
     deleteRole: function (req, res) {
